@@ -1,0 +1,31 @@
+{
+  "name": "sockjs-broker",
+  "version": "1.0.0",
+  "description": "Push SockJS message via HTTP POST.",
+  "maintainers": [
+    "lichun"
+  ],
+  "main": "src/index.js",
+  "scripts": {
+    "start": "nodemon src/index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "@koa/cors": "^3.1.0",
+    "@koa/router": "^10.1.1",
+    "dotenv-flow": "^3.2.0",
+    "ioredis": "^4.28.3",
+    "koa": "^2.13.4",
+    "koa-bodyparser": "^4.3.0",
+    "log4js": "^6.4.1",
+    "sockjs": "^0.3.24",
+    "websocket-multiplex": "^0.1.0"
+  }
+}
