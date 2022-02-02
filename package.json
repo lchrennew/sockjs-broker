@@ -1,18 +1,17 @@
 {
   "name": "sockjs-broker",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Push SockJS message via HTTP POST.",
   "maintainers": [
     "lichun"
   ],
   "main": "src/index.js",
   "scripts": {
-    "start": "nodemon src/index.js",
-    "test": "jest"
+    "start": "nodemon src/index.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "module",
   "devDependencies": {
     "nodemon": "^2.0.15"
