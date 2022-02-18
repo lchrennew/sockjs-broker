@@ -20,7 +20,7 @@
     "@koa/cors": "^3.1.0",
     "@koa/router": "^10.1.1",
     "dotenv-flow": "^3.2.0",
-    "es-get-logger": "^1.0.0",
+    "es-get-logger": "^1.0.1",
     "es-ioredis-url": "^1.0.1",
     "es-koa-body": "^4.2.1",
     "koa": "^2.13.4",
