@@ -1,7 +1,7 @@
 import { EventEmitter } from 'events';
-import getLogger from '../logger/index.js';
 import { announce } from '../scaling/index.js';
 import Channel from './Channel.js';
+import { getLogger } from "es-get-logger";
 
 const COMMA = ','
 

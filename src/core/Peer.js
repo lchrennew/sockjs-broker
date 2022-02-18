@@ -1,6 +1,5 @@
-import getLogger from '../logger/index.js';
 import Announcer from './Announcer.js';
-
+import { getLogger } from "es-get-logger";
 
 /**端点*/
 export default class Peer {

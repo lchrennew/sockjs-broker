@@ -2,10 +2,10 @@ import cors from '@koa/cors'
 import Router from '@koa/router'
 import http from 'http';
 import Koa from 'koa'
-import bodyParser from 'koa-bodyparser'
+import body from 'es-koa-body'
 import PubController from './controllers/PubController.js';
 import QueueServer from './core/index.js';
-import getLogger from './logger/index.js';
+import { getLogger } from "es-get-logger";
 
 const logger = getLogger('server.js')
 logger.info(`-- STARTING SERVER --`)
@@ -18,7 +18,7 @@ PubController(router, queue);
 
 app
     .use(cors({ credentials: 'include' }))
-    .use(bodyParser())
+    .use(body())
     .use(router.routes())
     .use(router.allowedMethods());
 

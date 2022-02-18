@@ -20,10 +20,10 @@
     "@koa/cors": "^3.1.0",
     "@koa/router": "^10.1.1",
     "dotenv-flow": "^3.2.0",
-    "ioredis": "^4.28.3",
+    "es-get-logger": "^1.0.0",
+    "es-ioredis-url": "^1.0.1",
+    "es-koa-body": "^4.2.1",
     "koa": "^2.13.4",
-    "koa-bodyparser": "^4.3.0",
-    "log4js": "^6.4.1",
     "sockjs": "^0.3.24",
     "websocket-multiplex": "^0.1.0"
   }

@@ -1,5 +1,5 @@
-import getLogger from '../logger/index.js';
 import { getRedis } from '../utils/redis.js';
+import { getLogger } from "es-get-logger";
 
 const logger = getLogger('scaling/index.js')
 const scaled = process.env.QUEUE_ANNOUNCE_STRATEGY === 'SCALED'

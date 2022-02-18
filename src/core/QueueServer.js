@@ -1,9 +1,9 @@
 import sock from 'sockjs';
-import getLogger from '../logger/index.js';
 import { remember } from '../scaling/index.js';
 import Announcer from './Announcer.js';
 import MultiplexServer from './MultiplexServer.js';
 import Peer from './Peer.js';
+import { getLogger } from "es-get-logger";
 
 
 /**

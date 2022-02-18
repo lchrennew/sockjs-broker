@@ -1,5 +1,5 @@
 import { config } from 'dotenv-flow'
-import getLogger from './logger/index.js';
+import { getLogger } from "es-get-logger";
 
 config()
 
