@@ -5,6 +5,10 @@ import { Stream } from 'stream';
  * */
 export default class Channel extends Stream {
 
+    conn;
+    topic;
+    channels;
+
     /**
      * @param conn 连接
      * @param topic {String} 主题名
@@ -18,6 +22,7 @@ export default class Channel extends Stream {
     }
 
     write = data => this.conn.write('msg,' + this.topic + ',' + data);
+
     end = data => {
         if (data) this.write(data);
         if (this.topic in this.channels) {
@@ -26,13 +31,11 @@ export default class Channel extends Stream {
             process.nextTick(() => this.emit('close'));
         }
     };
+
     destroy = () => {
         this.removeAllListeners();
         this.end();
     };
-    destroySoon = this.destroy;
 
-    conn;
-    topic;
-    channels;
+    destroySoon = this.destroy;
 }

@@ -3,7 +3,7 @@ import Router from '@koa/router'
 import http from 'http';
 import Koa from 'koa'
 import body from 'es-koa-body'
-import PubController from './controllers/PubController.js';
+import PubController from './controllers/pub-controller.js';
 import QueueServer from './core/index.js';
 import { getLogger } from "es-get-logger";
 

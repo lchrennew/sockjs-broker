@@ -1,9 +1,9 @@
-import Announcer from './Announcer.js';
+import Announcer from './announcer.js';
 import { getLogger } from "es-get-logger";
 
 /**端点*/
 export default class Peer {
-    logger = getLogger('Peer.js')
+    logger = getLogger('peer.js')
 
     connection;
     channel;

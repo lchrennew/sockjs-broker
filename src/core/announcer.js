@@ -2,7 +2,7 @@ import { getLogger } from "es-get-logger";
 
 export default class Announcer {
     channel;
-    logger = getLogger('Announcer.js')
+    logger = getLogger('announcer.js')
 
     constructor(channel) {
         this.channel = channel

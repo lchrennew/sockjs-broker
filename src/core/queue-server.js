@@ -1,8 +1,8 @@
 import sock from 'sockjs';
 import { remember } from '../scaling/index.js';
-import Announcer from './Announcer.js';
-import MultiplexServer from './MultiplexServer.js';
-import Peer from './Peer.js';
+import Announcer from './announcer.js';
+import MultiplexServer from './multiplex-server.js';
+import Peer from './peer.js';
 import { getLogger } from "es-get-logger";
 
 

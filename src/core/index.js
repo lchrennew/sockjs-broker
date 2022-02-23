@@ -1,3 +1,3 @@
-import QueueServer from './QueueServer.js';
+import QueueServer from './queue-server.js';
 
 export default QueueServer

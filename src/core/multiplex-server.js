@@ -1,6 +1,6 @@
 import { EventEmitter } from 'events';
 import { announce } from '../scaling/index.js';
-import Channel from './Channel.js';
+import Channel from './channel.js';
 import { getLogger } from "es-get-logger";
 
 const COMMA = ','
@@ -10,7 +10,7 @@ export default class MultiplexServer {
 
     registeredChannels = {};
     ws;
-    logger = getLogger('MultiplexServer.js')
+    logger = getLogger('multiplex-server.js')
 
     /**
      * 基于SockJs的多工服务器
@@ -46,8 +46,8 @@ export default class MultiplexServer {
 
 
         ws.on('connection', conn => {
-            const [server, sessionId] = conn.pathname.substr(conn.prefix.length + 1).split('/')
-            const clientId = [server, sessionId].join('')
+            const [ server, sessionId ] = conn.pathname.substr(conn.prefix.length + 1).split('/')
+            const clientId = [ server, sessionId ].join('')
             this.logger.info('Connected:', clientId)
             let channels = {};
 
