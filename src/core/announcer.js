@@ -1,16 +1,17 @@
-import { getLogger } from "es-get-logger";
+import { getLogger } from "koa-es-template";
+
+const logger = getLogger('announcer.js')
 
 export default class Announcer {
     channel;
-    logger = getLogger('announcer.js')
 
     constructor(channel) {
         this.channel = channel
     }
 
     announce = msg => {
-        this.logger.info(`Announce message in process:`)
-        this.logger.info(msg)
+        logger.info(`Announce message in process:`)
+        logger.info(msg)
         this.channel.emit('msg', msg)
     }
 }

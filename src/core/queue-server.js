@@ -3,8 +3,9 @@ import { remember } from '../scaling/index.js';
 import Announcer from './announcer.js';
 import MultiplexServer from './multiplex-server.js';
 import Peer from './peer.js';
-import { getLogger } from "es-get-logger";
+import { getLogger } from "koa-es-template";
 
+const logger = getLogger('QueueServer')
 
 /**
  * 队列服务器
@@ -14,7 +15,6 @@ export default class QueueServer {
     ws;
     multiplexer;
     channels = {};
-    logger = getLogger('QueueServer')
 
     /**
      * 启动队列服务器
@@ -25,7 +25,7 @@ export default class QueueServer {
         this.multiplexer = new MultiplexServer(this.ws);
         this.ws.installHandlers(server, { prefix: '/queues' });
         this.ws.on('requireChannel', (topic, conn) => this.getChannel(topic).emit('connection', conn))
-        this.logger.info('scaling.remember')
+        logger.info('scaling.remember')
         remember(this)
     }
 
@@ -49,8 +49,8 @@ export default class QueueServer {
      * @param msg {Object} 消息
      * */
     publish(topic, msg) {
-        this.logger.info(`Publish message to topic ${topic}:`)
-        this.logger.info(JSON.stringify(msg))
+        logger.info(`Publish message to topic ${topic}:`)
+        logger.info(JSON.stringify(msg))
         return new Announcer(this.getChannel(topic)).announce(msg);
     }
 }

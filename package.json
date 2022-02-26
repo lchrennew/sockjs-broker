@@ -1,6 +1,6 @@
 {
   "name": "sockjs-broker",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Push SockJS message via HTTP POST.",
   "maintainers": [
     "lichun"
@@ -17,13 +17,8 @@
     "nodemon": "^2.0.15"
   },
   "dependencies": {
-    "@koa/cors": "^3.1.0",
-    "@koa/router": "^10.1.1",
-    "dotenv-flow": "^3.2.0",
-    "es-get-logger": "^1.0.1",
-    "es-ioredis-url": "^1.0.1",
-    "es-koa-body": "^4.2.1",
-    "koa": "^2.13.4",
+    "es-ioredis-url": "^1.0.3",
+    "koa-es-template": "^1.0.16",
     "sockjs": "^0.3.24",
     "websocket-multiplex": "^0.1.0"
   }
