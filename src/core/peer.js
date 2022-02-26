@@ -1,10 +1,9 @@
 import Announcer from './announcer.js';
-import { getLogger } from "es-get-logger";
+import { getLogger } from "koa-es-template";
 
+const logger = getLogger('peer.js')
 /**端点*/
 export default class Peer {
-    logger = getLogger('peer.js')
-
     connection;
     channel;
     announcer;
@@ -17,7 +16,7 @@ export default class Peer {
 
     /**接入端点*/
     connect = () => {
-        this.logger.info(`Peer connected`)
+        logger.info(`Peer connected`)
         this.connection
             .on('close', this.close)
             .on('data', this.announce);
@@ -26,20 +25,20 @@ export default class Peer {
 
     /**关闭端点*/
     close = () => {
-        this.logger.info(`Close`)
+        logger.info(`Close`)
         this.channel.off('msg', this.remember);
         this.connection.destroy()
     };
 
     /**从服务器记录消息*/
     remember = msg => {
-        this.logger.info(`Remember ${msg}`)
+        logger.info(`Remember ${msg}`)
         this.connection.write(JSON.stringify({ msg, t: new Date().valueOf() }));
     }
 
     /**向服务器发布消息*/
     announce = msg => {
-        this.logger.info(`Announce ${msg}`)
+        logger.info(`Announce ${msg}`)
         this.announcer.announce(msg)
     }
 }

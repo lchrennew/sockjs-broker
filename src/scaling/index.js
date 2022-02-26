@@ -1,5 +1,5 @@
 import { getRedis } from '../utils/redis.js';
-import { getLogger } from "es-get-logger";
+import { getLogger } from "koa-es-template";
 
 const logger = getLogger('scaling/index.js')
 const scaled = process.env.QUEUE_ANNOUNCE_STRATEGY === 'SCALED'
