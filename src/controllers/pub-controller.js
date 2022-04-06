@@ -10,6 +10,12 @@ export default class PubController extends Controller{
             ctx.status = 204
         })
 
+        this.post('/publish', async ctx => {
+            const {topic} = ctx.query
+            queue.publish(topic, ctx.request.body);
+            ctx.status = 204
+        })
+
         this.get('/channels', async ctx => {
             ctx.body = queue.channels
         })
