@@ -1,3 +1,3 @@
-FROM node:16.0-alpine3.13
-COPY package.json build.sh babel.config.js start.sh .env .env.local ./
+FROM node:17.0-alpine3.13
+COPY package.json build.sh start.sh ./
 RUN sh build.sh
