@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "es-ioredis-url": "^1.0.3",
-    "koa-es-template": "^1.0.21",
+    "koa-es-template": "^1.0.22",
     "sockjs": "^0.3.24",
     "websocket-multiplex": "^0.1.0"
   }

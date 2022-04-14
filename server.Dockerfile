@@ -1,3 +1,3 @@
-FROM sockjs-broker/deps:1.0.0
+FROM sockjs-broker/deps:latest
 COPY src /sockjs-broker/src
 CMD sh start.sh
